@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+void intro();
+void game();
+
+int main ()
+{
+intro();
+game();
+return 0;}
+
+
+void intro()
+{
+printf("--THIS IS A NUMBER GUESSING GAME--\n\n");
+int input;
+while (input!=1)
+{
+printf("PLEASE ENTER '1' TO START.");
+scanf("%d",& input);
+}
+}
+
+void game()
+{
+srand(time(0));
+int num=(rand()%100)+1;
+int answer;
+int attempt = 0;
+while(answer!=num)
+{
+printf("--GUESS THE NUMBER BETWEEN 0-100 TO WIN--\n\n");
+scanf("%d",&answer);
+attempt++;
+if(answer<num)
+{
+printf("THE NUMBER IS TOO SMALL");
+}
+else if (answer>num)
+{
+printf("THE NUMBER IS TOO BIG");
+}
+else
+{
+printf("CORRECT!\nYOU WIN AT %d attempt",attempt);
+
+}
+}
+}

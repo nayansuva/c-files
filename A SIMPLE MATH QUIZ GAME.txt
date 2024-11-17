@@ -1,0 +1,181 @@
+#include <stdio.h>
+#include <time.h>
+#include<stdlib.h>
+
+int input;
+
+void intro();
+void rules();
+
+void pluse();
+void minus();
+void multiplication();
+void division();
+void win ();
+
+int main() 
+{
+    
+    intro();
+    rules();
+    
+    pluse();
+    minus();
+    multiplication();
+    division();
+    win ();
+    
+    return 0;
+}
+
+void intro()
+{
+    printf("WELCOME!\n\n----THIS IS A MATH QUIZ GAME----\n\n");
+    
+    
+    printf("--PLEASE ENTER '1' TO KNOW RULES--\n\n : ");
+    
+    scanf("%d",&input);
+    while(input!=1)
+    {
+    
+     printf("\nPLEASE ENTER ONLY NUMBER : '1'");
+     scanf("%d",&input);
+    }
+    system ("cls");
+}    
+void rules()
+{
+    printf("*****\n");
+printf("--HERE ARE SOME RULES THAT YOU SHOULD KNOW--\n");
+printf("*****\n\n");
+printf("RULE-1 : YOU HAVE TO INPUT THE CORRECT ANSWER OF THE MATH IQASON.\n\n");
+printf("RULE-2 : THERE ARE 4 LEVELS, COMPLITE THAM TO WIN.\n\n");
+printf("RULE-3 : IF YOU LOSE IN ANY LEVEL THE GAME WILL RESET ITSELF.\n\n");
+
+ printf("--PLEASE ENTER '1' TO START--\n\n : ");
+    scanf("%d",&input);
+        while(input!=1)
+    {
+    
+     printf("\nPLEASE ENTER ONLY NUMBER : '1'");
+     scanf("%d",&input);
+    }
+    system ("cls");
+
+}
+
+
+void pluse()
+{
+    printf("||----LEVEL 1----||\n\n");
+    printf("--PLEASE ANSWER THE FOLLOWING QUSTION TO GO TO NEXT LEVEL--\n");
+    srand(time(0));
+    int qus1=(rand() % 10)+1;
+    int qus2=(rand() % 10)+1;
+    int ans=qus1+qus2;
+    int answer;
+    printf("%d",qus1);
+    printf("+");
+    printf("%d\n",qus2);
+    scanf("%d",&answer);
+   
+    while(answer!=ans)
+    {
+    
+    printf("NOT CORRECT!\n:");  
+    scanf("%d",&answer);
+    }
+    
+       
+    printf("CORRECT!\n\n");
+    system ("cls");
+}
+
+void minus()
+{
+    printf("||----LEVEL 2----||\n\n");
+    printf("--PLEASE ANSWER THE FOLLOWING QUSTION TO GO TO NEXT LEVEL--\n");
+    srand(time(0));
+    int qus1=(rand() % 10)+1;
+    int qus2=(rand() % 10)+1;
+    int ans=qus1-qus2;
+    int answer;
+    printf("%d",qus1);
+    printf("-");
+    printf("%d\n",qus2);
+    scanf("%d",&answer);
+   
+    while(answer!=ans)
+    {
+    
+    printf("NOT CORRECT!\n:");  
+    scanf("%d",&answer);
+    }
+    
+       
+    printf("CORRECT!\n\n");
+    system ("cls");
+}
+
+void multiplication()
+{
+    printf("||----LEVEL 3----||\n\n");
+    printf("--PLEASE ANSWER THE FOLLOWING QUSTION TO GO TO NEXT LEVEL--\n");
+    srand(time(0));
+    int qus1=(rand() % 10)+1;
+    int qus2=(rand() % 10)+1;
+    int ans=qus1*qus2;
+    int answer;
+    printf("%d",qus1);
+    printf("*");
+    printf("%d\n",qus2);
+    scanf("%d",&answer);
+   
+    while(answer!=ans)
+    {
+    
+    printf("NOT CORRECT!\n:");  
+    scanf("%d",&answer);
+    }
+    
+       
+    printf("CORRECT!\n\n");
+    
+    system ("cls");
+}
+
+
+void division()
+{
+    printf("||----LEVEL 4----||\n\n");
+    printf("--PLEASE ANSWER THE FOLLOWING QUSTION TO GO TO NEXT LEVEL--\n");
+    srand(time(0));
+    int qus1=(rand() % 10)+1;
+    int qus2=(rand() % 10)+1;
+    int ans=qus1/qus2;
+    int answer;
+    printf("%d",qus1);
+    printf("/");
+    printf("%d\n",qus2);
+    scanf("%d",&answer);
+   
+    while(answer!=ans)
+    {
+    
+    printf("NOT CORRECT!\n:");  
+    scanf("%d",&answer);
+    }
+    
+     
+    printf("CORRECT!\n\n");   
+    
+    
+    system ("cls");
+}
+
+
+void win ()
+{
+    printf("YOOU WIN!");
+}

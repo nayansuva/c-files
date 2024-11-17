@@ -1,0 +1,100 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+
+void board();
+void control();
+
+
+char box[] = {'0','1','2','3','4','5','6','7','8','9'};
+char mark1 = 'O';
+char mark2 = 'X';
+int input;
+int replace;
+int player = 0;
+
+
+int main()
+{
+board();
+control();
+return 0;
+}
+
+
+void board()
+{
+printf("_____\n");
+printf("| %c | %c | %c |\n",box[1],box[2],box[3]);
+printf("_____\n");
+printf("| %c | %c | %c |\n",box[4],box[5],box[6]);
+printf("_____\n");
+printf("| %c | %c | %c |\n",box[7],box[8],box[9]);
+printf("_____\n");
+}
+
+
+void control()
+{
+
+while(replace<9)
+{
+    while(1)
+    {
+        if(player==0)
+        {
+        printf("PLAYER 1'S MOVE :");
+        }
+        else
+        {
+        printf("PLAYER 2'S MOVE :");
+        }
+        player = 1 - player;
+        break;
+    
+    
+    }
+scanf("%d",&input);
+if(input>=1 && input<=9)
+{
+    if(player==0)
+        {
+            if(box[input] != mark1)
+            {
+            box[input] = mark1;
+            }
+            else
+            {
+            printf("THE BOX ALREADY TAKEN");
+            }
+        }
+    else 
+        {
+            if(box[input] != mark2)
+            {
+            box[input] = mark2;
+            }
+            else
+            {
+            printf("THE BOX ALREADY TAKEN");
+            }
+        }
+}
+else if(input==0)
+{
+printf("'0' IS NOT AVAILABLE");
+}
+
+else
+{
+printf("NOTHING HAPPENED.");
+}
+system("cls");
+board();
+if(replace==9)
+{
+printf("\n\n--ALL BOXS ARE FILLED--");
+}
+}
+}
